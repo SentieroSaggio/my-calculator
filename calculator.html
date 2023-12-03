@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NUMERO DEL DESTINO</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #D9D0C5;
+            text-align: center;
+            background-image: url('https://drive.google.com/uc?id=1haFUbab77OnxCVHuZl8c2u0kGWC-1Gpo');
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #calculator-container {
+            padding: 20px;
+            border-radius: 10px;
+            background-color: transparent;
+        }
+
+        h1 {
+            color: #D9D0C5;
+            font-size: 24px;
+        }
+
+        input {
+            padding: 10px;
+            font-size: 16px;
+            margin: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #D9D0C5;
+            color: #ffffff;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #BFAE98;
+        }
+
+        #result {
+            font-size: 18px;
+            font-family: 'Times New Roman', serif;
+            color: #D9D0C5;
+        }
+    </style>
+</head>
+<body>
+    <div id="calculator-container">
+        <h1>NUMERO DEL DESTINO</h1>
+        <p>Inserisci la data nel formato GG.MM.AAAA, ad esempio 01.05.1978:</p>
+        <input type="text" id="dateInput" placeholder="Ad esempio, 01.05.1978">
+        <br>
+        <button onclick="calcolaSomma()">Calcolare</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function calcolaSomma() {
+            var input = document.getElementById('dateInput').value;
+            var cifre = input.replace(/\D/g, '').split('');
+            var somma1 = cifre.reduce(function(a, b) {
+                return parseInt(a) + parseInt(b);
+            }, 0);
+
+            // Дополнительное суммирование цифр полученной суммы
+            var somma2 = somma1.toString().split('').reduce(function(a, b) {
+                return parseInt(a) + parseInt(b);
+            }, 0);
+
+            // Если сумма двузначная, суммируем цифры
+            if (somma2 >= 10) {
+                somma2 = somma2.toString().split('').reduce(function(a, b) {
+                    return parseInt(a) + parseInt(b);
+                }, 0);
+            }
+
+            // Используем тернарный оператор для замены 10 на 1
+            var risultato = somma2 === 10 ? 1 : somma2;
+
+            document.getElementById('result').innerHTML = 'NUMERO DEL DESTINO: ' + risultato;
+
+            // Проверка на 1 для перехода на другую страницу
+            if (risultato === 1) {
+                window.location.href = 'https://drive.google.com/file/d/1cmvhM9FLE9OIH7rhbAoE8X-u6nK62Nyu/view?usp=sharing';
+            }
+
+            // Проверка на 3 для перехода на другую страницу
+            else if (risultato === 3) {
+                window.location.href = 'https://drive.google.com/file/d/12ukCh4B8xTKGFSC8V-FV64dXTYGcdjI0/view?usp=drive_link';
+            }
+
+            // Проверка на 4 для перехода на другую страницу
+            else if (risultato === 4) {
+                window.location.href = 'https://drive.google.com/file/d/1tAfOuisBNG_YOHtdz_Mx60jPNLpfkspT/view?usp=drive_link';
+            }
+
+            // Проверка на 5 для перехода на другую страницу
+            else if (risultato === 5) {
+                window.location.href = 'https://drive.google.com/file/d/1cCL8gxo30GxHtzULgmd7s7rZLlJnINw9/view?usp=drive_link';
+            }
+
+            // Проверка на 6 для перехода на другую страницу
+            else if (risultato === 6) {
+                window.location.href = 'https://drive.google.com/file/d/1r6XOFoURJxvUyhqoC3640tUP9bYcuy2v/view?usp=drive_link';
+            }
+
+            // Проверка на 7 для перехода на другую страницу
+            else if (risultato === 7) {
+                window.location.href = 'https://drive.google.com/file/d/17BC7Vo9bcchwkomN0iemHn9JDHPSVewO/view?usp=drive_link';
+            }
+
+            // Проверка на 8 для перехода на другую страницу
+            else if (risultato === 8) {
+                window.location.href = 'https://drive.google.com/file/d/1ccjdhlJE0P3Vxor9Nt3Bx_foHFw-9sF3/view?usp=drive_link';
+            }
+
+            // Проверка на 9 для перехода на другую страницу
+            else if (risultato === 9) {
+                window.location.href = 'https://drive.google.com/file/d/1NPZV8TmzBtHn6qHKaNwU6Zeibpd6ZHRu/view?usp=drive_link';
+            }
+
+            // Проверка на 2 для перехода на другую страницу
+            else if (risultato === 2) {
+                window.location.href = 'https://drive.google.com/file/d/1EzK1eofH47CI7cdK5ORIxt8V-J_yjdZz/view?usp=drive_link';
+            }
+        }
+    </script>
+</body>
+</html>
